@@ -1,0 +1,358 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("/colours.css");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@font-face {
+  font-family: Inter;
+  font-style: oblique 0deg 10deg;
+  font-weight: 100 900;
+  font-display: block;
+  src: url("https://rsms.me/etc/inter-opsz/Inter-V.var.woff2") format("woff2");
+}
+
+:root {
+  --background: white;
+  --on-background-major: #111;
+  --on-background: #777;
+  --on-background-minor: #aaa;
+  --accent: #07f;
+  --on-accent: white;
+  --banner: #07f;
+  --on-banner: white;
+  --surface: #eee;
+  --on-surface: #333;
+  --outline: #ddd;
+  --outline-colour: #00000033;
+
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  padding: 0;
+  margin: 0;
+  color: var(--on-background);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  font-variation-settings: "opsz" 32;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.heading-display {
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  color: var(--on-background-major);
+  font-weight: 600;
+}
+
+[class*="heading"] + [class*="heading"] {
+  margin-top: 25px;
+}
+
+.heading-title {
+  color: var(--on-background-major);
+  font-size: 48px;
+  font-weight: 600;
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  text-align: center;
+}
+
+.heading-subtitle {
+  font-size: 20px;
+  line-height: 2;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.hyperlink {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border-radius: 9999px;
+  padding: 0 25px;
+  height: 40px;
+  color: var(--on-surface);
+  text-decoration: none;
+  width: fit-content;
+  whitespace: nowrap;
+}
+
+.button.button-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  background: var(--banner);
+  padding: 15px 25px;
+  color: var(--on-banner);
+}
+
+.banner * {
+  color: var(--on-banner);
+}
+
+.hero--title {
+  margin: 100px auto 200px auto;
+  text-align: center;
+  width: 75%;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  color: var(--on-background);
+  margin: 0 auto;
+  max-width: 1250px;
+}
+
+.nav .button {
+  padding: 0px 20px;
+  height: 35px;
+}
+
+.nav > * {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.nav > *:first-child {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  color: var(--blue);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav > *:first-child svg {
+  height: 28px;
+  width: 28px;
+  fill: var(--blue);
+}
+
+.nav > *:nth-child(2) {
+  flex: 2;
+  flex-shrink: 2;
+  gap: 50px;
+  justify-content: center;
+  padding: 0 50px;
+}
+
+.nav > *:last-child {
+  gap: 25px;
+  justify-content: flex-end;
+  color: var(--blue);
+}
+
+.nav a.button.pfp {
+  background: #aaa;
+  background-size: cover;
+  background-origin: border-box;
+  border: 1px solid var(--outline-colour);
+  border-radius: 50%;
+  padding: 0;
+  height: 35px;
+  width: 35px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--outline);
+  border-radius: 16px;
+  padding: 50px;
+  text-align: center;
+}
+
+.card--icon {
+  background: #aaa;
+  background-size: cover;
+  background-origin: border-box;
+  border: 1px solid var(--outline-colour);
+  border-radius: 50%;
+  padding: 0;
+  height: 60px;
+  width: 60px;
+}
+
+.card--name {
+  color: var(--on-background-major);
+  font-size: 24px;
+  margin-top: 25px;
+}
+
+.card--subname {
+  margin-top: 15px;
+}
+
+.card--button {
+  margin-top: 50px;
+}
+
+#projects {
+  display: grid;
+  gap: 25px;
+}
+
+#projects > .card {
+  padding: 150px 75px;
+}
+
+#projects > .card * {
+  color: white;
+}
+
+#projects .card--icon {
+  border-radius: 16px;
+}
+
+#projects .card--button {
+  background: var(--background);
+  color: var(--on-background-major);
+}
+
+#team-list {
+  /* https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/ */
+  --grid-layout-gap: 25px;
+  --grid-column-count: 2;
+  --grid-item--min-width: 300px;
+
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+  grid-gap: var(--grid-layout-gap);
+
+  align-items: center;
+  justify-content: center;
+  margin-top: 75px;
+}
+
+#team-list > .card {
+  height: 100%;
+}
+
+main {
+  margin: 100px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px;
+}
+
+footer > *:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 40px;
+  flex: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .heading-display {
+    font-size: 32px;
+  }
+  
+  [class*="heading"] + [class*="heading"] {
+    margin-top: 10px;
+  }
+  
+  .heading-title {
+    margin-top: 75px;
+    font-size: 20px;
+  }
+  
+  .heading-subtitle {
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .nav--links {
+    display: none;
+  }
+
+  .hero--title {
+    margin: 25px auto 100px auto;
+  }
+
+  main {
+    margin: 10px;
+  }
+
+  .button {
+    height: 35px;
+    padding: 0 15px;
+  }
+
+  .card--icon {
+    height: 40px;
+    width: 40px;
+  }
+
+  .card--name {
+    font-size: 20px;
+  }
+
+  #projects {
+    gap: 10px;
+  }
+
+  #projects > .card {
+    padding: 50px 25px;
+  }
+
+  #team-list {
+    --grid-layout-gap: 10px;
+
+    margin-top: 25px;
+  }
+
+  #team-list > .card {
+    padding: 50px 25px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 25px;
+  }
+}

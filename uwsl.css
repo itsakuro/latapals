@@ -1,31 +1,16 @@
-@import url("/colours.css");
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
-@font-face {
-  font-family: Inter;
-  font-style: oblique 0deg 10deg;
-  font-weight: 100 900;
-  font-display: block;
-  src: url("https://rsms.me/etc/inter-opsz/Inter-V.var.woff2?v3") format("woff2");
-}
-
-@font-face {
-  font-family: Inter;
-  font-style: oblique 0deg 10deg;
-  font-weight: 100 900;
-  font-display: block;
-  src: url("https://rsms.me/inter/font-files/InterDisplay.var.woff2?v=3.19") format("woff2");
-}
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://rsms.me/inter/inter-display.css");
+@import url("https://cdn.jsdelivr.net/gh/shannonmoeller/reset-css@master/reset.css");
 
 :root {
   --background: white;
-  --on-background: black;
+  --on-background: #111;
   --on-background-sub-major: #333;
-  --on-background-sub: #555;
-  --on-background-sub-minor: #aaa;
-  --accent: #17f;
+  --on-background-sub: #777;
+  --on-background-sub-minor: #999;
+  --accent: #07f;
   --on-accent: white;
-  --banner: #17f;
+  --banner: #07f;
   --on-banner: white;
   --footer: #eee;
   --on-footer: #555;
@@ -34,58 +19,50 @@
 }
 
 body {
-  background: var(--background);
-  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: 100vh;
   margin: 0;
   color: var(--on-background);
-  font-family: Inter;
+  font-family: "InterDisplay var", "Inter var", Inter;
   font-size: 16px;
   font-weight: 500;
   font-variation-settings: "opsz" 32;
-  letter-spacing: 0.01em;
   scroll-behavior: smooth;
-}
-
-button, a.button {
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  background: var(--accent);
-  border: none;
-  border-radius: 99px;
-  padding: 10px 20px;
-  color: var(--on-accent);
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: 500;
-  text-decoration: none;
 }
 
 banner {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2em;
+  gap: 25px;
   background: var(--banner);
-  padding: 15px;
+  padding: 15px 25px;
   color: var(--on-banner);
-  font-size: 15px;
 }
 
-banner a {
+banner * {
   color: var(--on-banner);
+}
+
+nav, footer {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
 }
 
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px;
+  padding: 50px 50px 0 50px;
   color: var(--on-background-sub);
   font-size: 15px;
   font-weight: 500;
-  margin: 0 auto;
-  max-width: 1250px;
+  max-width: 1300px;
 }
 
 nav a {
@@ -94,7 +71,7 @@ nav a {
 }
 
 nav a.button {
-  padding: 7.5px 20px;
+  padding: 0 20px;
   height: 35px;
 }
 
@@ -142,123 +119,82 @@ nav a.button.pfp {
   width: 35px;
 }
 
-header {
-  text-align: center;
-  padding: 75px 100px 125px 100px;
-}
-
-header > * {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 750px;
-}
-
-header > *:first-child {
-  margin-top: 0;
-}
-
-header > *:last-child {
-  margin-bottom: 0;
-}
-
-header h1 {
-  font-size: 64px;
-  font-weight: 600;
-  letter-spacing: 0;
-}
-
-header h2 {
-  color: #555;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-main, section {
-  padding: 0 100px 100px 100px;
-  margin: 0 auto;
-  max-width: 1300px;
-}
-
-section h2 {
-  margin-bottom: 50px;
-  font-size: 36px;
-  font-weight: 500;
-  text-align: center;
-}
-
 footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: var(--footer);
-  padding: 50px 100px;
-  color: var(--on-footer);
-}
-
-footer svg path {
-  fill: var(--on-footer);
+  gap: 40px;
+  padding: 100px;
+  max-width: 1400px;
 }
 
 footer > div {
-  display: inline-grid;
-  align-items: end;
-  grid-gap: 10px;
-}
-
-footer > div > div {
-  display: inline-flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 0.5em 2em;
-  font-size: 14px;
+  display: flex;
+  flex: 1;
+  justify-content: end;
+  gap: 40px;
 }
 
 footer a {
-  color: inherit;
+  color: #999;
   text-decoration: none;
 }
 
-@media only screen and (max-width: 600px) {
-  nav > *:not(:first-child) {
-    display: none;
-  }
-  
-  header {
-    padding: 0 50px 75px 50px;
-    text-align: left;
-  }
+main {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 1400px;
+  padding: 0 100px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-  header * {
-    margin-left: 0;
-    margin-right: 0;
-    text-align: left;
-  }
+main > .content {
+  display: grid;
+  gap: 200px;
+}
 
-  header h1 {
-    font-size: 48px;
-  }
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  border-radius: 99px;
+  padding: 0 20px;
+  height: 40px;
+  color: var(--on-accent);
+  text-decoration: none;
+}
 
-  main, section {
-    padding: 0 50px 50px 50px;
-  }
+.text-hero {
+  font-size: 96px;
+  font-weight: 600;
+  letter-spacing: -4;
+  line-height: 1;
+  max-width: 1000px;
+  margin: 150px auto 200px auto;
+}
 
-  section h2 {
-    text-align: left;
-  }
+.section--header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+  text-align: center;
+  margin: 0 auto 75px auto;
+  max-width: 750px;
+}
 
-  footer {
-    flex-direction: column;
-    align-items: start;
-    padding: 50px;
-    gap: 2em;
-  }
+.section--header h2 {
+  font-size: 48px;
+  font-weight: 600;
+}
 
-  footer > div {
-    gap: 1em;
-  }
-
-  footer > div > div {
-    justify-content: start;
-  }
+.section--header p {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #777;
 }
