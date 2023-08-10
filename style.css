@@ -60,11 +60,11 @@
 }
 
 #project-icons {
-  background-image: radial-gradient(52.37% 93.21% at 50% 50%, #111133 0%, rgba(17, 17, 51, 0.9) 50%, rgba(17, 17, 51, 0.5) 100%), url(/assets/icons.png);
+  background-image: radial-gradient(52.37% 93.21% at 50% 50%, #111133 0%, rgba(17, 17, 51, 0.9) 50%, rgba(17, 17, 51, 0.5) 100%), url(assets/icons.png);
 }
 
 #project-colours {
-  background-image: radial-gradient(52.37% 93.21% at 50% 50%, rgba(17, 17, 51, 0.25) 0%, rgba(17, 17, 51, 0.225) 50%, rgba(17, 17, 51, 0.125) 100%), url(/assets/colours.png);
+  background-image: radial-gradient(52.37% 93.21% at 50% 50%, rgba(17, 17, 51, 0.25) 0%, rgba(17, 17, 51, 0.225) 50%, rgba(17, 17, 51, 0.125) 100%), url(assets/colours.png);
 }
 
 #project-zz {
