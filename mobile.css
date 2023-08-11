@@ -1,4 +1,5 @@
-.nav--links {
+.nav--links,
+#nav-button {
   display: none;
 }
 
