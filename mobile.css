@@ -12,6 +12,7 @@ main {
 
 .project {
   width: 100%;
+  padding: 100px 75px 0 75px;
 }
 
 #project-jj {
